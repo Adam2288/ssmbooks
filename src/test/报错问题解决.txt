@@ -1,0 +1,21 @@
+1、Books类实例无法使用set、get方法。
+解决方法：更新lombok的pom包至最新包，解决与IDEA下载的lombok插件版本不一致的问题。
+2、关于IDEA 报Error:java:无效的源发行版13。及nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 57。
+jdk13暂时不被支持,降级至jdk11,可正常运行。
+降级方法：
+a、在project setting里分别设置project 和modules中有关版本的地方，都降级为11。
+b、PlatForm Settings 下，选SDKs,有关版本的地方都需降级。
+c、compile/java compile下进行project bytecode version和target bytecode version降级。
+d、注意：对于project，上述三点设置好后，如果重新reimport project，以上设置会恢复原来的最初设置。
+
+3、Configuration problem: Failed to import bean definitions from relative location [spring-service.xml]
+导致该问题的上一个caution是：nested exception is java.lang.IllegalArgumentException: Unsupported class file major version 57。
+故解决问题：Unsupported class file major version 57，即可。（即把jdk版本从13降级到11，问题解决）
+
+4、IDEA调试SpringMvc项目时，出错：java.lang.ClassNotFoundException: org.springframework.web.context.ContextLoaderListener。
+解决方法：File > Project Structure > Artifacts > 在右侧Output Layout右击项目名，选择Put into Output Root，
+点击Apply->OK后重启Tomcat即可解决。
+
+
+
+

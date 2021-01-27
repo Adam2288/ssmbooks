@@ -1,0 +1,5 @@
+Mac版IDEA下部署Tomcat步骤
+1、Tomcat官网下载安装包，解压到本地某处，如Library。
+2、点击run ——> Edit Configurations
+3、点击Templates,下拉找到Tomcat，点击选择local,点击Application Server右端的Configure...,在弹出框里配置本地的Tomcat.
+
